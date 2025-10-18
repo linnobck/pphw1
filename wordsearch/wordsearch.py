@@ -72,7 +72,7 @@ def check_word_direction(
         new_col = starting_col + (i * direction_col)
 
         # if steps go out of bounds
-        if is_in_bounds(new_row, new_col) == False:
+        if not is_in_bounds(new_row, new_col):
             return False
 
         # compare if grid letter and letter in word are equal      
@@ -117,7 +117,7 @@ def find_word(puzzle_grid: list[str], word: str) -> tuple[int, int]:
             if current_letter == word[0]:
                 for d in directions:
                     success = check_word_direction(puzzle_grid, word, (i,j), d)
-                    if success == True:
+                    if success:
                         return (i,j)
                     
     return INVALID_WORD
