@@ -6,8 +6,9 @@ file2: 10 words, 1 unique
 total: 40 words, 12 unique
 """
 
-import sys, string
-from pathlib import Path
+import sys
+import string
+# from pathlib import Path <-- used for testing
 
 # this was for testing my output
 #BASE_DIR = Path(__file__).parent
@@ -35,13 +36,13 @@ def summarize(files: list) -> str:
     # loop through all files
     for file in files:
         # store stats for each file
-        file_name = ""
+        #file_name = "" <-- used for testing
         file_words = 0
         file_unique = set()
         
         # turn each line into individual word strings
         with open(file, "r") as f:
-            #file_name = os.path.basename(file)
+            #file_name = os.path.basename(file) <-- used for testing
             for line in f:
                 line = line.lower().strip()
                 # use .maketrans() to delete all punctuation and replace w space
